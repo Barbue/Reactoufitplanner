@@ -249,9 +249,11 @@ return (
 
       
 
-      <h5>OUTFIT PLANNER</h5>
-      <h6>FIND WHAT TO WEAR</h6>
-      <h5>Fashion Styles / Dress Code</h5>
+      <h5 id='h5'>OUTFIT PLANNER</h5>
+      <p>FIND WHAT TO WEAR</p>
+      <h6 id ='h52'>Fashion Styles / Dress Code</h6>
+      <br/>
+      
       
       <Button variant="primary" size="sm" onClick={() => casual()}>Casual</Button>
       <br/>
