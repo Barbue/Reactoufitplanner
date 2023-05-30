@@ -1,6 +1,8 @@
 
 import './App.css';
 import Button from 'react-bootstrap/Button';
+import { useEffect } from 'react';
+
 
 
 const clothing = [
@@ -145,61 +147,104 @@ const clothing = [
 
 
 function App() {
-  
-   
-  //const casualTops = () => {
-    
-    
-  let casualTops1 = []
-  clothing.map((clothes) => {
-  if(clothes.dressCode === 'casual' && clothes.type === 'top') {
-    
-    casualTops1.push(clothes.imageUrl)
-    
-     return Math.floor(casualTops1.length * Math.random())
-    
+
+  const casual = () => {
+
+    let casualTops1 = []
+    let casualBottoms2 = []
+    let casualShoes3 = []
+    clothing.map((clothes) => {
+
+    if(clothes.dressCode === 'casual' && clothes.type === 'top') {
+      casualTops1.push(clothes.imageUrl)
+     let  randomIndex = Math.floor(Math.random() * casualTops1.length);
+     let randomImage =  casualTops1[randomIndex]
+     console.log(randomImage)
+     document.getElementById('image1').src = randomImage
+    }
+    if(clothes.dressCode === 'casual' && clothes.type === 'bottom') {
+      casualBottoms2.push(clothes.imageUrl)
+     let  randomIndex2 = Math.floor(Math.random() * casualBottoms2.length);
+     let randomImage2 =  casualBottoms2[randomIndex2]
+     console.log(randomImage2)
+     document.getElementById('image2').src = randomImage2
+    }
+    if(clothes.dressCode === 'casual' && clothes.type === 'shoes') {
+      casualShoes3.push(clothes.imageUrl)
+     let  randomIndex3 = Math.floor(Math.random() * casualShoes3.length);
+     let randomImage3 =  casualShoes3[randomIndex3]
+     console.log(randomImage3)
+     document.getElementById('image3').src = randomImage3
   }
   }
   )
- //}
+  }
 
-  console.log(casualTops1)
-   
-    
+  const sport = () => {
 
+    let sportTops1 = []
+    let sportBottoms2 = []
+    let sportShoes3 = []
+    clothing.map((clothes) => {
 
-    
+    if(clothes.dressCode === 'sport' && clothes.type === 'top') {
+      sportTops1.push(clothes.imageUrl)
+     let  randomIndex = Math.floor(Math.random() * sportTops1.length);
+     let randomImage =  sportTops1[randomIndex]
+     console.log(randomImage)
+     document.getElementById('image1').src = randomImage
+    }
+    if(clothes.dressCode === 'sport' && clothes.type === 'bottom') {
+      sportBottoms2.push(clothes.imageUrl)
+     let  randomIndex2 = Math.floor(Math.random() * sportBottoms2.length);
+     let randomImage2 =  sportBottoms2[randomIndex2]
+     console.log(randomImage2)
+     document.getElementById('image2').src = randomImage2
+    }
+    if(clothes.dressCode === 'sport' && clothes.type === 'shoes') {
+      sportShoes3.push(clothes.imageUrl)
+     let  randomIndex3 = Math.floor(Math.random() * sportShoes3.length);
+     let randomImage3 =  sportShoes3[randomIndex3]
+     console.log(randomImage3)
+     document.getElementById('image3').src = randomImage3
+  }
+  }
+  )
+  }
 
+  const formal = () => {
 
+    let formalTops1 = []
+    let formalBottoms2 = []
+    let formalShoes3 = []
+    clothing.map((clothes) => {
 
+    if(clothes.dressCode === 'formal' && clothes.type === 'top') {
+      formalTops1.push(clothes.imageUrl)
+     let  randomIndex = Math.floor(Math.random() * formalTops1.length);
+     let randomImage =  formalTops1[randomIndex]
+     console.log(randomImage)
+     document.getElementById('image1').src = randomImage
+    }
+    if(clothes.dressCode === 'formal' && clothes.type === 'bottom') {
+      formalBottoms2.push(clothes.imageUrl)
+     let  randomIndex2 = Math.floor(Math.random() * formalBottoms2.length);
+     let randomImage2 =  formalBottoms2[randomIndex2]
+     console.log(randomImage2)
+     document.getElementById('image2').src = randomImage2
+    }
+    if(clothes.dressCode === 'formal' && clothes.type === 'shoes') {
+      formalShoes3.push(clothes.imageUrl)
+     let  randomIndex3 = Math.floor(Math.random() * formalShoes3.length);
+     let randomImage3 =  formalShoes3[randomIndex3]
+     console.log(randomImage3)
+     document.getElementById('image3').src = randomImage3
+  }
+  }
+  )
+  }
   
-     
-    
-
-
-
-
-  
- 
-    
-  
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  return (
+return (
     <div className="App">
 
       
@@ -208,30 +253,29 @@ function App() {
       <h6>FIND WHAT TO WEAR</h6>
       <h5>Fashion Styles / Dress Code</h5>
       
-      <Button variant="primary" size="sm" onClick={() => casualTops1}>Casual</Button>
+      <Button variant="primary" size="sm" onClick={() => casual()}>Casual</Button>
       <br/>
       <br/>
       
-      <Button variant="primary" size="sm">Sport</Button>
+      <Button variant="primary" size="sm" onClick={() => sport()}>Sport</Button>
       <br/>
       <br/>
       
-      <Button variant="primary" size="sm">Formal</Button>
+      <Button variant="primary" size="sm" onClick={() => formal()}>Formal</Button>
       <br/>
       <br/>
       
         <h6>TOP</h6>
-        <img 
-      src= {casualTops1}
+        <img id='image1'
       />
 
         <h6>BOTTOM</h6>
-        <img 
-      src= {clothing[1].imageUrl}
+        <img id='image2'
+      
       />
         <h6>SHOES</h6>
-        <img 
-      src= {clothing[8].imageUrl}
+        <img id='image3'
+      
       />
       
 
